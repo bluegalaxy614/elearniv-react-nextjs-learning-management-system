@@ -1,4 +1,4 @@
-import bcrypt from "bcrypt";
+// import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import isEmail from "validator/lib/isEmail";
 
@@ -50,7 +50,8 @@ const userSignin = async (req, res) => {
 			});
 		}
 
-		const passwordsMatch = await bcrypt.compare(password, user.password);
+		// const passwordsMatch = await bcrypt.compare(password, user.password);
+		const passwordsMatch = password == user.password; 
 		if (passwordsMatch) {
 			const elarniv_users_token = jwt.sign(
 				{

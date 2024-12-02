@@ -1,4 +1,4 @@
-import bcrypt from "bcrypt";
+// import bcrypt from "bcrypt";
 import { v4 as uuidv4 } from "uuid";
 import jwt from "jsonwebtoken";
 import isEmail from "validator/lib/isEmail";
@@ -56,13 +56,13 @@ const userSignup = async (req, res) => {
 		}
 
 		// Encrypt password with bcrypt
-		const passwordHash = await bcrypt.hash(password, 10);
-
+		// const passwordHash = await bcrypt.hash(password, 10);
 		const newUser = await User.create({
 			first_name,
 			last_name,
 			email,
-			password: passwordHash,
+			// password: passwordHash,
+			password: password,
 			reset_password_token: confirmToken,
 			reset_password_send_at: Date.now(),
 		});
