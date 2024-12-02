@@ -104,6 +104,12 @@ module.exports = {
 				type: Sequelize.BOOLEAN,
 				defaultValue: true,
 			},
+			failed_login_attempts: {
+				type: Sequelize.STRING,
+			},
+			lock_until: {
+				type: Sequelize.DATE,
+			},
 			created_at: {
 				allowNull: false,
 				type: Sequelize.DATE,

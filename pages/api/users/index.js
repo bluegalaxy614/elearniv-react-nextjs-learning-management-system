@@ -3,7 +3,7 @@ import User from "database/models/user";
 export default async function handler(req, res) {
 	try {
 		const users = await User.findAll({
-			attributes: ["first_name", "last_name", "email"],
+			attributes: ["first_name", "last_name", "email", "phone"],
 			order: [["created_at", "DESC"]],
 			limit: 100,
 		});

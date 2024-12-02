@@ -52,6 +52,8 @@ const initUser = (sequelize, Types) => {
 			instructor_description: Types.STRING,
 			status: Types.BOOLEAN,
 			is_profile_public: Types.BOOLEAN,
+			failed_login_attempts: Types.STRING,
+			lock_until: Types.DATE,
 		},
 		{
 			sequelize,

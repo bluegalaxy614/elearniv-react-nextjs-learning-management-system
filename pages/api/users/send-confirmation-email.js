@@ -28,6 +28,35 @@ const userConfirmationEmailSend = async (req, res) => {
 			where: { email: email },
 		});
 
+		console.log(user)
+		// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+		if (!user) {
+			return res.status(422).json({ message: `Email is incorrect` });
+		} else if (user.email_confirmed) {
+			return res
+				.status(422)
+				.send({ message: `Email address is already confirmed!` });
+		}
+
+		await User.update(
+			{
+				email_confirmed: true,
+				email_confirmed_at: Date.now(),
+			},
+			{
+				where: {
+					id: user.id,
+				},
+			}
+		);
+
+		res.status(201).json({
+			message: `Email address confirmed successfully. Thank you`,
+		});
+
+
+		// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 		if (user) {
 			confirmEmailAddress(user);
 

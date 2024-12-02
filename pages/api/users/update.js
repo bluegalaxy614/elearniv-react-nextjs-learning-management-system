@@ -51,6 +51,7 @@ const userUpdate = async (req, res) => {
 		linkedin,
 		youtube,
 	} = req.body;
+
 	try {
 		const { userId } = jwt.verify(
 			req.headers.authorization,
@@ -84,6 +85,7 @@ const userUpdate = async (req, res) => {
 				first_name: updateUser.first_name,
 				last_name: updateUser.last_name,
 				email: updateUser.email,
+				phone: updateUser.phone,
 				role: updateUser.role,
 				avatar: updateUser.profile_photo,
 			},
