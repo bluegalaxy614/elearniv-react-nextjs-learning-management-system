@@ -81,10 +81,9 @@ MyApp.getInitialProps = async ({ Component, ctx }) => {
 			const payload = { headers: { Authorization: elarniv_users_token } };
 			const url = `${baseUrl}/api/users/update`;
 			const response = await fetch(url, payload);
-			console.log(response)
 			if (response.ok) {
 				const user = await response.json();
-				console.log(user);
+				// console.log(user);
 				pageProps.user = user;
 			} else if (response.status === 404) {
 				console.error("User not found");

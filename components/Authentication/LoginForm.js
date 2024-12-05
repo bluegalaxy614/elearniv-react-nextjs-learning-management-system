@@ -77,7 +77,7 @@ const LoginForm = () => {
 
 				<form onSubmit={handleSubmit}>
 					<div className="form-group">
-						<label>Email or Phone Number</label>
+						<label>Email</label>
 						<input
 							type="text"
 							className="form-control"

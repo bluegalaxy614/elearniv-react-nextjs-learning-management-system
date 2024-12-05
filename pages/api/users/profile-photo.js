@@ -43,7 +43,6 @@ const userProfilePhoto = async (req, res) => {
 				first_name: updateUser.first_name,
 				last_name: updateUser.last_name,
 				email: updateUser.email,
-				phone: updateUser.phone,
 				role: updateUser.role,
 				profile_photo: updateUser.profile_photo,
 			},

@@ -11,7 +11,6 @@ const INITIAL_USER = {
 	first_name: "",
 	last_name: "",
 	email: "",
-	phone: "",
 	password: "",
 };
 
@@ -109,19 +108,6 @@ const RegisterForm = () => {
 							placeholder="Email"
 							name="email"
 							value={user.email}
-							onChange={handleChange}
-						/>
-					</div>
-
-					<div className="form-group">
-						<label>Phone Number</label>
-						<input
-							type="tel"
-							className="form-control"
-							placeholder="Phone Number"
-							name="phone"
-							value={user.phone}
-							pattern="[0-9]{10,15}"
 							onChange={handleChange}
 						/>
 					</div>
